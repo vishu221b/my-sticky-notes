@@ -1,5 +1,5 @@
 ## My Sticky Notes
-## [Click me to watch it live in action!](https://my-sticky-notes.netlify.app/ "My Sticky Notes")
+[Click me to watch it live in action!](https://my-sticky-notes.netlify.app/ "My Sticky Notes")
 
 A note keeping progressive web app.
 
