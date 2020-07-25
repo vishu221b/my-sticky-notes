@@ -6,7 +6,7 @@
 body {
   font-family: arial, sans-serif;
   font-size: 100%;
-  margin: 3em;
+  margin: 2em;
   background: #333;
   color: #fff;
 }
@@ -47,6 +47,7 @@ body {
 
 .btn {
   padding: 10px;
+  margin: 5px;
   border-radius: 20px;
   border: 2px solid #ffd31d;
   background-color: #ffd31d;
@@ -82,9 +83,12 @@ ul li a {
   color: #000;
   background: #ffd31d;
   display: block;
-  height: 15em;
-  width: 15em;
-  padding: 1em;
+  min-width: 10em;
+  max-width: 13em;
+  min-height: 10em;
+  width: auto;
+  height: auto;
+  padding: 1.5em;
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
 }
 
@@ -121,30 +125,30 @@ ul li p {
 }
 
 ul li a {
-  transform: rotate(-6deg);
-  -moz-transform: rotate(-6deg);
+  transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
   cursor: default;
 }
 
 ul li:nth-child(even) a {
-  transform: rotate(4deg);
-  -moz-transform: rotate(4deg);
+  transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
   position: relative;
   top: 5px;
   background: #ff5733;
 }
 
 ul li:nth-child(3n) a {
-  transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
+  transform: rotate(-0.5deg);
+  -moz-transform: rotate(-0.5deg);
   position: relative;
   top: -5px;
   background: #77d8d8;
 }
 
 ul li:nth-child(5n) a {
-  transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
+  transform: rotate(-5eg);
+  -moz-transform: rotate(-5deg);
   position: relative;
   top: -10px;
 }
@@ -189,5 +193,22 @@ ol li a {
 
   .btn {
     margin-left: 0px;
+  }
+  ul li a {
+    text-decoration: none;
+    color: #000;
+    background: #ffd31d;
+    display: block;
+    min-height: 10em;
+    min-width: 13em;
+    height: auto;
+    width: auto;
+    padding: 15px;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  }
+  ul li a:hover,
+  ul li a:focus {
+  transform: scale(1.05);
+  -moz-transform: scale(1.05);
   }
 }

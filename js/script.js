@@ -115,23 +115,31 @@ let getProcessInputForNewNote = (e) => {
     
     noteTitle = document.getElementById('new-note-title-input').value;
     noteContentBody = document.getElementById('new-note-body-input').value;
-    
-    let titleCount = 0
-    while(window.localStorage.getItem(noteTitle)){
-        // handling duplicate note titles since local storage can have only unique keys
-        ++titleCount;
-        noteTitle = document.getElementById('new-note-title-input').value + `-${titleCount.toString()}`;
-    } 
-    document.getElementById('new-note-title-input').value = "";
-    document.getElementById('new-note-body-input').value = "";
-    window.localStorage.setItem(noteTitle, noteContentBody); //storing the Note in local storage
-    console.log("Title: ", noteTitle, ", Body: ", noteContentBody);
-    window.localStorage.setItem('count', ++count); //storing the Note in local storage
-    if (Number(window.localStorage.getItem('count')) > 1 && !document.querySelector('#clear-all-button')){
-        createClearAllNotesButton();
+    if (noteTitle.length > 40){
+        alert("Title cannot be more than 40 words.");
     }
-    createNewNoteFromDetails(noteTitle);
-    
+    else if (noteContentBody.length > 120){
+        alert("Only 120 words are allowed per note. Please create multiple notes to accumulate bigger data.");
+        noteTitle = '';
+        noteContentBody = '';
+    }
+    else{
+        let titleCount = 0
+        while(window.localStorage.getItem(noteTitle)){
+            // handling duplicate note titles since local storage can have only unique keys
+            ++titleCount;
+            noteTitle = document.getElementById('new-note-title-input').value + `-${titleCount.toString()}`;
+        } 
+        document.getElementById('new-note-title-input').value = "";
+        document.getElementById('new-note-body-input').value = "";
+        window.localStorage.setItem(noteTitle, noteContentBody); //storing the Note in local storage
+        console.log("Title: ", noteTitle, ", Body: ", noteContentBody);
+        window.localStorage.setItem('count', ++count); //storing the Note in local storage
+        if (Number(window.localStorage.getItem('count')) > 1 && !document.querySelector('#clear-all-button')){
+            createClearAllNotesButton();
+        }
+        createNewNoteFromDetails(noteTitle);
+    }
 };
 
 
