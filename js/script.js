@@ -1,6 +1,7 @@
 if ('serviceWorker' in navigator){
     // registering serviceWorker
     navigator.serviceWorker.register('service-worker.js');
+    // will create service-worker.js using sw-precache npm library
 }
 
 
